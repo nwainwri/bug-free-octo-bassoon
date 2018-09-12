@@ -10,17 +10,6 @@ import UIKit
 
 class NewsItem: NSObject {
   
-// World, Americas, Europe, Middle East, Africa and Asia Pacific.
-
-//  enum Category {
-//    case world red
-//    case americas blue
-//    case europe green
-//    case middleEast yellow
-//    case africa orange
-//    case asiaPacific purple
-//  }
-
   var category:String = ""
   var headline:String = ""
   

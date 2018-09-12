@@ -12,23 +12,6 @@ class MainViewTableViewCell: UITableViewCell {
   @IBOutlet weak var cellCategory: UILabel!
   @IBOutlet weak var cellHeadline: UILabel!
   
-  var newsItem: NewsItemEd? {
-    didSet {
-      if let item = newsItem {
-        cellCategory.text = item.category.toString()
-        cellCategory.textColor = item.category.toColor()
-        cellHeadline.text = item.headline
-      }
-      else {
-        cellCategory.text = nil
-        cellHeadline.text = nil
-      }
-    }
-  }
-  
-  
-  
-  
   override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,11 +19,6 @@ class MainViewTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
-  
-  
-  
 }
