@@ -12,7 +12,7 @@ class MainViewTableViewCell: UITableViewCell {
   @IBOutlet weak var cellCategory: UILabel!
   @IBOutlet weak var cellHeadline: UILabel!
   
-  var newsItem: NewsItemEd? {
+  var newsItem: NewsItem? {
     didSet {
       if let item = newsItem {
         cellCategory.text = item.category.toString()
@@ -27,17 +27,12 @@ class MainViewTableViewCell: UITableViewCell {
   }
   
   override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    super.awakeFromNib()
+    // Initialization code
+  }
   
-  
-  
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    // Configure the view for the selected state
+  }
 }

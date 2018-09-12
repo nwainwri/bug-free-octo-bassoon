@@ -1,46 +1,61 @@
 //
-//  NewsItem.swift
+//  NewsItemEd.swift
 //  StretchMyHeader_SingleView
 //
 //  Created by Nathan Wainwright on 2018-09-11.
 //  Copyright © 2018 Nathan Wainwright. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class NewsItem: NSObject {
+struct NewsItem {
   
-// World, Americas, Europe, Middle East, Africa and Asia Pacific.
-
-//  enum Category {
-//    case world red
-//    case americas blue
-//    case europe green
-//    case middleEast yellow
-//    case africa orange
-//    case asiaPacific purple
-//  }
-
-  var category:String = ""
-  var headline:String = ""
-  
-  func colour () -> UIColor {
-    if self.category == "World" {
-      return UIColor.red
-    } else if category == "Americas" {
-      return UIColor.blue
-    } else if category == "Europe" {
-      return UIColor.green
-    } else if category == "Middle East" {
-      return UIColor.yellow
-    } else if category == "Africa" {
-      return UIColor.orange
-    } else if category == "Asia Pacific" {
-      return UIColor.purple
-    } else {
-      return UIColor.gray
+  enum NewsCategory {
+    case World
+    case Americas
+    case Europe
+    case MiddleEast
+    case Africa
+    case AsiaPacific
+    
+    func toString() -> String {
+      switch self {
+      case .World:
+        return "World"
+      case .Americas:
+        return "Americas"
+      case .Europe:
+        return "Europe"
+      case .MiddleEast:
+        return "Middle East"
+      case .Africa:
+        return "Africa"
+      case .AsiaPacific:
+        return "Asia-Pacific"
+      }
+    }
+    
+    func toColor() -> UIColor {
+      switch self {
+      case .World:
+        return UIColor.red
+      case .Americas:
+        return UIColor.blue
+      case .Europe:
+        return UIColor.green
+      case .MiddleEast:
+        return UIColor.yellow
+      case .Africa:
+        return UIColor.orange
+      case .AsiaPacific:
+        return UIColor.purple
+      }
     }
   }
+  
+  let category: NewsCategory
+  let headline: String
 }
 
 
