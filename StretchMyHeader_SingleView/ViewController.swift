@@ -130,14 +130,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = mainTableView.dequeueReusableCell(withIdentifier: "stretchyCell") as! MainViewTableViewCell //1.
-    cell.cellCategory?.text = allTheNews[indexPath.row].category
-    cell.cellCategory?.textColor = allTheNews[indexPath.row].colour()
-    cell.cellHeadline?.text = allTheNews[indexPath.row].headline
+//    let cell = mainTableView.dequeueReusableCell(withIdentifier: "stretchyCell") as! MainViewTableViewCell //1.
     
-    cell.cellCategory?.text = allTheNews[indexPath.row].category
-    cell.cellCategory?.textColor = allTheNews[indexPath.row].colour()
-    cell.cellHeadline?.text = allTheNews[indexPath.row].headline
+    let item = newsTopics[indexPath.row]
+    let cell = mainTableView.dequeueReusableCell(withIdentifier: "stretchyCell", for: indexPath) as! MainViewTableViewCell
+    cell.newsItem = item
+    
     return cell //4.
   }
   
